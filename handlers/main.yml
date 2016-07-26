@@ -3,8 +3,5 @@
 
 - name: restart nfs
   service:
-    name: "{{ item }}"
+    name: "nfs-kernel-server"
     state: "restarted"
-  with_items:
-    - "nfs-kernel-server"
-    - "idmapd"
