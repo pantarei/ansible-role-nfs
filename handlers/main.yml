@@ -1,0 +1,10 @@
+---
+# handlers file for hswong3i.nfs
+
+- name: restart nfs
+  service:
+    name: "{{ item }}"
+    state: "restarted"
+  with_items:
+    - "nfs-kernel-server"
+    - "idmapd"

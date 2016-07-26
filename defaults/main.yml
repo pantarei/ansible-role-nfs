@@ -1,0 +1,6 @@
+---
+# defaults file for hswong3i.nfs
+
+nfs_exports: {
+#  "/srv": "hostname1(rw,sync,no_subtree_check) hostname2(ro,sync,no_subtree_check)"
+}
