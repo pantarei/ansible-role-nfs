@@ -1,0 +1,2 @@
+---
+nfs_exports: { "/srv": "0.0.0.0/24(rw,sync,no_subtree_check)" }

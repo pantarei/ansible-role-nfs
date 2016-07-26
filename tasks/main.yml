@@ -1,0 +1,37 @@
+---
+# tasks file for hswong3i.nfs
+
+- name: apt-get install
+  apt:
+    name: "{{ item.name }}"
+    state: "{{ item.state }}"
+  with_items:
+    - { state: "latest", name: "nfs-common" }
+    - { state: "latest", name: "nfs-kernel-server" }
+  notify: restart nfs
+  tags: hswong3i.nfs
+
+- name: copy templates
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ item.dest }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+  with_items:
+    - { src: "etc/default/nfs-common.j2", dest: "/etc/default/nfs-common", owner: "root", group: "root", mode: "0644" }
+    - { src: "etc/default/nfs-kernel-server.j2", dest: "/etc/default/nfs-kernel-server", owner: "root", group: "root", mode: "0644" }
+    - { src: "etc/exports.j2", dest: "/etc/exports", owner: "root", group: "root", mode: "0644" }
+    - { src: "etc/idmapd.conf.j2", dest: "/etc/idmapd.conf", owner: "root", group: "root", mode: "0644" }
+  notify: restart nfs
+  tags: hswong3i.nfs
+
+- name: enable service
+  service:
+    name: "{{ item }}"
+    enabled: "yes"
+  with_items:
+    - "nfs-kernel-server"
+    - "idmapd"
+  notify: restart nfs
+  tags: hswong3i.nfs
