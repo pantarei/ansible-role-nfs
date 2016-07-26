@@ -28,10 +28,7 @@
 
 - name: enable service
   service:
-    name: "{{ item }}"
+    name: "nfs-kernel-server"
     enabled: "yes"
-  with_items:
-    - "nfs-kernel-server"
-    - "idmapd"
   notify: restart nfs
   tags: hswong3i.nfs
