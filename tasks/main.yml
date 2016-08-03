@@ -11,6 +11,17 @@
   notify: restart nfs
   tags: hswong3i.nfs
 
+- name: prepare files
+  file:
+    path: "{{ item.path }}"
+    owner: "{{ item.owner }}"
+    group: "{{ item.group }}"
+    mode: "{{ item.mode }}"
+    state: "directory"
+  with_items: nfs_exports
+  notify: restart nfs
+  tags: hswong3i.nfs
+
 - name: copy templates
   template:
     src: "{{ item.src }}"
