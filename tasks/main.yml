@@ -18,7 +18,7 @@
     group: "{{ item.group }}"
     mode: "{{ item.mode }}"
     state: "directory"
-  with_items: nfs_exports
+  with_items: "{{ nfs_exports }}"
   notify: restart nfs
   tags: hswong3i.nfs
 
