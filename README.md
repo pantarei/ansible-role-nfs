@@ -1,5 +1,5 @@
 Ansible Role for NFS
-==========================
+====================
 
 [![Build Status](https://travis-ci.org/pantarei/ansible-role-nfs.svg?branch=master)](https://travis-ci.org/pantarei/ansible-role-nfs)
 [![GitHub tag](https://img.shields.io/github/tag/pantarei/ansible-role-nfs.svg)](https://github.com/pantarei/ansible-role-nfs)
@@ -36,11 +36,95 @@ Role Variables
 </thead>
 <tbody>
 <tr class="odd">
+<td>nfs_idmapd_domain</td>
+<td>yes</td>
+<td>localdomain</td>
+<td></td>
+<td>The local NFSv4 domain name.</td>
+</tr>
+<tr class="even">
+<td>nfs_idmapd_nobody_group</td>
+<td>yes</td>
+<td>nogroup</td>
+<td></td>
+<td>Local group name to be used when a mapping cannot be completed.</td>
+</tr>
+<tr class="odd">
+<td>nfs_idmapd_nobody_user</td>
+<td>yes</td>
+<td>nobody</td>
+<td></td>
+<td>Local user name to be used when a mapping cannot be completed.</td>
+</tr>
+<tr class="even">
+<td>nfs_need_sggd</td>
+<td>yes</td>
+<td>no</td>
+<td></td>
+<td>Do you want to start the gssd daemon? It is required for Kerberos mounts.</td>
+</tr>
+<tr class="odd">
+<td>nfs_need_statd</td>
+<td>yes</td>
+<td>no</td>
+<td></td>
+<td>Do you want to start the statd daemon? It is not needed for NFSv4.</td>
+</tr>
+<tr class="even">
+<td>nfs_need_svcgssd</td>
+<td>yes</td>
+<td>no</td>
+<td></td>
+<td>Do you want to start the svcgssd daemon? It is only required for Kerberos exports.</td>
+</tr>
+<tr class="odd">
+<td>nfs_rpc_mountd_opts</td>
+<td>yes</td>
+<td>--manage-gids</td>
+<td></td>
+<td>Options for rpc.mountd.</td>
+</tr>
+<tr class="even">
+<td>nfs_rpc_nfsd_count</td>
+<td>yes</td>
+<td>8</td>
+<td></td>
+<td>Number of servers to start up.</td>
+</tr>
+<tr class="odd">
+<td>nfs_rpc_nfsd_opts</td>
+<td>yes</td>
+<td></td>
+<td></td>
+<td>Options for rpc.nfsd.</td>
+</tr>
+<tr class="even">
+<td>nfs_rpc_nfsd_priority</td>
+<td>yes</td>
+<td>0</td>
+<td></td>
+<td>Runtime priority of server.</td>
+</tr>
+<tr class="odd">
+<td>nfs_rpc_svcgssd_opts</td>
+<td>yes</td>
+<td></td>
+<td></td>
+<td>Options for rpc.svcgssd.</td>
+</tr>
+<tr class="even">
+<td>nfs_statd_opts</td>
+<td>yes</td>
+<td></td>
+<td></td>
+<td>Options for rpc.statd.</td>
+</tr>
+<tr class="odd">
 <td>nfs_exports</td>
 <td>yes</td>
 <td><a href="https://github.com/pantarei/ansible-role-nfs/blob/master/defaults/main.yml">defaults/main.yml</a></td>
 <td></td>
-<td>A list of exports in "folder": "options" style.</td>
+<td>A list of exports in &quot;folder&quot;: &quot;options&quot; style.</td>
 </tr>
 </tbody>
 </table>
