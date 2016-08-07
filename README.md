@@ -103,7 +103,7 @@ Role Variables
 <td>yes</td>
 <td><a href="https://github.com/pantarei/ansible-role-nfs/blob/master/defaults/main.yml">defaults/main.yml</a></td>
 <td></td>
-<td>A list of exports in &quot;folder&quot;: &quot;options&quot; style.</td>
+<td>A list of exports.</td>
 </tr>
 </tbody>
 </table>

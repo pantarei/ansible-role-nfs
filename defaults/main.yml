@@ -12,6 +12,6 @@ nfs_rpc_svcgssd_opts: ""
 nfs_statd_opts: ""
 
 nfs_exports: [
-#  { owner: "root", group: "root", mode: "0777", dest: "/srv/exports", options: "*(rw,no_subtree_check,no_root_squash,sync,insecure,fsid=root,crossmnt)" },
-#  { owner: "root", group: "root", mode: "0777", dest: "/srv/exports/home", options: "*(rw,no_subtree_check,no_root_squash,sync,insecure)" },
+#  { owner: "root", group: "root", mode: "0777", dest: "/srv/exports", opts: "*(rw,no_subtree_check,no_root_squash,sync,insecure,fsid=root,crossmnt)" },
+#  { owner: "root", group: "root", mode: "0777", dest: "/srv/exports/home", opts: "*(rw,no_subtree_check,no_root_squash,sync,insecure)" },
 ]
