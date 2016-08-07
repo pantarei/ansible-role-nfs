@@ -1,9 +1,6 @@
 ---
 # defaults file for hswong3i.nfs
 
-nfs_idmapd_domain: "localdomain"
-nfs_idmapd_nobody_group: "nogroup"
-nfs_idmapd_nobody_user: "nobody"
 nfs_need_sggd: "no"
 nfs_need_statd: "no"
 nfs_need_svcgssd: "no"
