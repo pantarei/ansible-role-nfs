@@ -1,0 +1,7 @@
+---
+# vars file for hswong3i.nfs (trusty)
+
+_apt: [
+  { state: "latest", name: "nfs-common" },
+  { state: "latest", name: "nfs-kernel-server" },
+]
