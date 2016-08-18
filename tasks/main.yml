@@ -29,7 +29,7 @@
 - name: enable service
   service:
     name: "rpcbind"
-    status: "enabled"
+    state: "enabled"
     enabled: "yes"
   notify: restart nfs
   tags: hswong3i.nfs
