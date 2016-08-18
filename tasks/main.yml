@@ -28,6 +28,14 @@
 
 - name: enable service
   service:
+    name: "rpcbind"
+    status: "enabled"
+    enabled: "yes"
+  notify: restart nfs
+  tags: hswong3i.nfs
+
+- name: enable service
+  service:
     name: "nfs-kernel-server"
     enabled: "yes"
   notify: restart nfs
